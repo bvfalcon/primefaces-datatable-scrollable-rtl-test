@@ -9,14 +9,19 @@
 
     <h:head>
         <title>PrimeFaces Test</title>
-        <h:outputScript name="test.js" />
-        <h:outputStylesheet name="test.css" />
     </h:head>
     <h:body>
 
-        <h1>#{testView.string}</h1>
         <h:form id="frmTest">
-            
+<p:panel>
+            <p:dataTable widgetVar="testDataTable"
+                value="#{testView.list}" var="obj"
+                scrollable="true" scrollHeight="100" dir="rtl">
+                <p:column headerText="id" style="background-color:aquamarine;">#{obj.id}</p:column>
+                <p:column headerText="name">#{obj.name}</p:column>
+                <p:column headerText="artist">#{obj.artist}</p:column>
+            </p:dataTable>
+</p:panel>
         </h:form>
 
     </h:body>
